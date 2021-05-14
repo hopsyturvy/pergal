@@ -65,6 +65,7 @@ function DrawIt() { //Update the vis when things change
     }
 }
 for (var i = 0; i < theNodes.data.length; i++) {
+    console.log(theNodes.data[i])
     //Detect hierarchical
      if (theNodes.data[i].id=="hierarchy") {
         hType=theNodes.data[i].label.toUpperCase()
@@ -169,12 +170,14 @@ for (var i = 0; i < theNodes.data.length; i++) {
     if ($('#Example option:selected').text() == "Manure") theSeed = 0.63
     if ($('#Example option:selected').text() == "HomeCompost") theSeed = 0.60
     if ($('#Example option:selected').text() == "Coffee-Footprint") theSeed = 0.59
+    if ($('#Example option:selected').text() == "Pergal-Fridge") theSeed = 494834
    //Vis allows many settings - these tweaks help for Open Analyzer
     var options = {
         "edges": {
             arrows: { to: true },
             width: 2, //Just a little tweak helps
-            color: { color: "#aaa" }
+            color: { color: "#aaa" },
+            length: 200
         },
         "nodes": {
             "borderWidth": 0,
@@ -214,7 +217,7 @@ for (var i = 0; i < theNodes.data.length; i++) {
     network.on("stabilized", function (params) {
         var moptions = { animation: { duration: 1500 }, scale: 1 }
         if ($('#Zoom1').is(':checked')) {
-            network.moveTo(moptions)
+            network.fit(moptions)
             network.redraw() //Can hang if we don't have this
         }
     })
@@ -312,12 +315,10 @@ function handleFileSelect(evt) {//Get the file - either the .csv or .html
             if (!f.name.toUpperCase().includes(".HTML")) {
                 theFName = f.name.replace(new RegExp(".csv", 'gi'), "")
                 fhtml = theFName + ".html"
-                document.getElementById("Custom").innerHTML = "<h3>Custom HTML</h3><p>If you provide " + fhtml + " your custom HTML will go here</p>"
                 $('#HTML').val("-")
                 LoadData2(D)
             }
             else { //This will be the HTML .txt file
-                document.getElementById("Custom").innerHTML = D
                 $('#HTML').val(D)
             }
         }
@@ -331,7 +332,7 @@ function handleFileSelect(evt) {//Get the file - either the .csv or .html
 function GetFile() {
     selectedID = false
     $.ajax({//By addint ?Date.now() we can avoid caching, to solve some problems
-        url: "fridge.csv",
+        url: "https://hopsyturvy.github.io/pergal/" + $('#Example option:selected').text() + ".csv",
     }).done(function (data) {
         LoadData(data)
     });
@@ -391,7 +392,6 @@ function GetHTML() {//Read the HTML and put it onto the page in the Custom div
             //$('#HTML').val(data)
         },
         error: function (xhr, status, error) {
-            document.getElementById("Custom").innerHTML = "<h3>Custom HTML</h3><p>If you provided " + $('#Example option:selected').text() + "MyInfo.html" + " your custom HTML would have gone here here</p>"
             //$('#HTML').val("-")
         },
     });
