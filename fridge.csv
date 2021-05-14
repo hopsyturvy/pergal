@@ -1,0 +1,12 @@
+id,label,units,title,color,level,val,conv,from,to,step,equn,comment
+,,,,,,,,,,,,
+FMfg,Fridge production,kg,Emissions related to fridge manufacture,pink,,250,1,0,500,10,,
+FO,Fridge operation,kWh/day,Power usage by fridge per day,pink,,0.35,1,0,1,0.1,,
+Emix,Emissions per kWh,kg/kWh,"Emissions per unit of electricty, depending on energy mix",pink,,0.275,1,0,2,0.1,,
+Life,Lifespan of fridge,years,"Lifespan of fridge, in years",pink,,10,1,0,30,1,,
+Fday,Fridge emissions per day,g CO2 / day,CO2 emissions from fridge per day,pink,,0,1,-,-,-,({FMfg}/({Life}*365)+{FO}*{Emix})*1000,
+Litres,Litres of milk per day,L / day,Number of litres per day used by café,pink,,10,1,1,100,1,,
+Flitre,Fridge emissions per litre,g CO2 / L,CO2 emissions from fridge per L,blue,,0,1,-,-,-,{Fday}/{Litres},
+,,,,,,,,,,,,
+Pergal,Emissions saved on packaging,g CO2 / L,CO2 emissions per L saved on packaging by using pergal,pink,,9,1,0,100,1,,
+Net saving,Total emissions saved,g CO2 / L,Total CO2 emissions per L saved by using pergal,yellow,,0,1,-,-,-,{Pergal}-{Flitre},
