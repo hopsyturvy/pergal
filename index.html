@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://www.stevenabbott.co.uk/_/css/styles.v2.min.css">
+    <link rel="stylesheet" href="https://www.stevenabbott.co.uk/_/css/custom.v2.css">
+    <link rel="stylesheet" href="abbottiframe.css">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <section class="container">
+            <article class="main-content full-width clearfix">
+                <script type="text/javascript" src="https://www.stevenabbott.co.uk/Open-Analyzer/apps/js/vis-network.min.js"></script>
+                <script type="text/javascript" src="https://www.stevenabbott.co.uk/Open-Analyzer/apps/js/FileSaver.min.js"></script>
+                <link href="https://www.stevenabbott.co.uk/Open-Analyzer/apps/js/vis-network.min.css" rel="stylesheet" type="text/css" />
+                <style type="text/css">
+                    #network {
+                        width: 1150px;
+                        height: 600px;
+                        border: 1px solid lightgray;
+                    }
+
+                    #optionsContainer {
+                        height: 280px;
+                    }
+                </style>
+
+                <div class="feature-box app clearfix">
+                    <div id="Title">
+                        <h3>Pergal</h3>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="row">
+                            <div id="network"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="five-columns">
+                            <label id='ILabel'>No Input Selected</label>
+                            <input id="Slider" type="text" data-slider-min="0" data-slider-max="100"
+                                data-slider-step="1" data-slider-value="50">
+                        </div>
+                        <div class="five-columns">Example <select id="Example">
+                                <option>HomeCompost</option>
+                                <option>HomeCompost-H</option>
+                                <option>BioBased</option>
+                                <option>BioGas</option>
+                                <option>BioPET</option>
+                                <option>Coffee-Grinds</option>
+                                <option selected="selected">Coffee-Footprint</option>
+                                <option>Beer-Brewing</option>
+                                <option>Travel-Choices</option>
+                                <option>Rail-Fares-Neutral</option>
+                                <option>Rail-Fares-Public</option>
+                                <option>Rail-Fares-Private</option>
+                                <option>Language-Students</option>
+                                <option>Manure</option>
+                                <option>Plastics</option>
+                            </select>
+                        </div>
+                        <div class="five-columns">
+                            <input type="file" id="Load" title="Load a wicked network" />
+                        </div>
+                        <div class="five-columns">
+                            <button class="btn-info-pad" id="Reload" title="Reload the current file"
+                                type="button">Reload last file</button>
+                            <div class="checkbox"><input name="yyy" title="Start with 100% view" type="checkbox"
+                                    checked="checked" id="Zoom1" />100%</div>
+                            <div class="checkbox"><input name="zzz" title="Let nodes change relative size"
+                                    type="checkbox" id="Changes" />Variable node size</div>
+                        </div>
+                        <div class="five-columns">
+                            <button class="btn-info-pad" id="Capture"
+                                title="Capture the present model to the Clipboard to paste into Excel"
+                                type="button">Copy Model → Clipboard</button>
+                            <button class="btn-info-pad" id="Save"
+                                title="Download the present model as a .csv file for Excel" type="button">Download
+                                Model → CSV</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <script src="https://www.stevenabbott.co.uk/_/js/vendor/jquery-2.2.0.min.js"></script>
+    <script src="https://www.stevenabbott.co.uk/_/js/vendor/bootstrap-modal.js"></script>
+    <script src="https://www.stevenabbott.co.uk/_/js/vendor/bootstrap-slider.js"></script>
+    <script src="https://www.stevenabbott.co.uk/_/js/vendor/papaparse.min.js"></script>
+    <script src="https://www.stevenabbott.co.uk/_/js/app.js"></script>
+    <script src="pergalanalyzer.js"></script>
+    <script src="https://www.stevenabbott.co.uk/_/js/all.min.v2.js"></script>
+
+</body>
+
+</html>

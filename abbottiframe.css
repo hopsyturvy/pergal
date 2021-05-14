@@ -1,0 +1,9 @@
+.wrapper {
+    padding: 0;
+}
+
+.full-width, .post-column, .two-thirds-column {
+    box-sizing: border-box;
+    float: left;
+    padding: 0;
+}
