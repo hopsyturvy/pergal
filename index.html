@@ -41,48 +41,38 @@
                     </div>
 
                     <div class="row" id="Controls">
-                        <div class="five-columns">
+                        <div class="two-columns">
                             <label id='ILabel'>No Input Selected</label>
                             <input id="Slider" type="text" data-slider-min="0" data-slider-max="100"
                                 data-slider-step="1" data-slider-value="50">
                         </div>
-                        <div class="five-columns">Example <select id="Example" disabled>
-                                <option>HomeCompost</option>
-                                <option>HomeCompost-H</option>
-                                <option>BioBased</option>
-                                <option>BioGas</option>
-                                <option>BioPET</option>
-                                <option>Coffee-Grinds</option>
-                                <option selected="selected">Pergal-Fridge</option>
-                                <option>Beer-Brewing</option>
-                                <option>Travel-Choices</option>
-                                <option>Rail-Fares-Neutral</option>
-                                <option>Rail-Fares-Public</option>
-                                <option>Rail-Fares-Private</option>
-                                <option>Language-Students</option>
-                                <option>Manure</option>
-                                <option>Plastics</option>
-                            </select>
-                        </div>
-                        <div class="five-columns">
-                            <input type="file" id="Load" title="Load a wicked network" />
-                        </div>
-                        <div class="five-columns">
-                            <button class="btn-info-pad" id="Reload" title="Reload the current file"
-                                type="button">Reload last file</button>
+                        <div class="four-columns">
                             <div class="checkbox"><input name="yyy" title="Start with 100% view" type="checkbox"
-                                    checked="checked" id="Zoom1" />100%</div>
-                            <div class="checkbox"><input name="zzz" title="Let nodes change relative size"
-                                    type="checkbox" id="Changes" />Variable node size</div>
+                                    checked="checked" id="Zoom1" />Reset view</div>
                         </div>
-                        <div class="five-columns">
-                            <button class="btn-info-pad" id="Capture"
-                                title="Capture the present model to the Clipboard to paste into Excel"
-                                type="button">Copy Model → Clipboard</button>
+                        <div class="four-columns">
                             <button class="btn-info-pad" id="Save"
                                 title="Download the present model as a .csv file for Excel" type="button">Download
                                 Model → CSV</button>
                         </div>
+                        <div style="display: none">Example <select id="Example" disabled>
+                            <option>HomeCompost</option>
+                            <option>HomeCompost-H</option>
+                            <option>BioBased</option>
+                            <option>BioGas</option>
+                            <option>BioPET</option>
+                            <option>Coffee-Grinds</option>
+                            <option selected="selected">Pergal-Fridge</option>
+                            <option>Beer-Brewing</option>
+                            <option>Travel-Choices</option>
+                            <option>Rail-Fares-Neutral</option>
+                            <option>Rail-Fares-Public</option>
+                            <option>Rail-Fares-Private</option>
+                            <option>Language-Students</option>
+                            <option>Manure</option>
+                            <option>Plastics</option>
+                        </select>
+                    </div>
                     </div>
                 </div>
             </article>
