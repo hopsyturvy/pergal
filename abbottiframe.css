@@ -10,5 +10,24 @@
 
 #network {
     width: 100%;
+    height: 600px;
+
 }
 
+@media all and (max-width: 900px) {
+    #network {
+        height: 500px;
+    }
+}
+
+@media all and (max-width: 700px) {
+    #network {
+        height: 400px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    #network {
+        height: 300px;
+    }
+}
