@@ -6,6 +6,29 @@
     box-sizing: border-box;
     float: left;
     padding: 0;
+    margin-bottom: 0;
+}
+
+.feature-box, .full-width {
+    margin-bottom: 0;
+    border: 0;
+}
+
+.feature-box.app {
+    background-color: #edeef2;
+    padding-bottom: 0;
+    border: 0;
+}
+
+h3 {
+    margin-bottom: 15px;
+}
+
+.app .row {
+    margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.00266rem;
 }
 
 #network {
@@ -16,13 +39,13 @@
 
 @media all and (max-width: 900px) {
     #network {
-        height: 500px;
+        height: 450px;
     }
 }
 
 @media all and (max-width: 700px) {
     #network {
-        height: 400px;
+        height: 350px;
     }
 }
 

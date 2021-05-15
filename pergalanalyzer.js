@@ -40,7 +40,10 @@ $(document).ready(function () {
     document.getElementById('Load').addEventListener('click', clearOldName, false);
     document.getElementById('Load').addEventListener('change', handleFileSelect, false);
     //Load the default choice in the Combo box
-    GetFile()
+    GetFile();
+    resizeNetwork();
+
+    window.addEventListener("resize", resizeNetwork);
 
 });
 function DrawIt() { //Update the vis when things change
@@ -65,7 +68,6 @@ function DrawIt() { //Update the vis when things change
     }
 }
 for (var i = 0; i < theNodes.data.length; i++) {
-    console.log(theNodes.data[i])
     //Detect hierarchical
      if (theNodes.data[i].id=="hierarchy") {
         hType=theNodes.data[i].label.toUpperCase()
@@ -487,4 +489,13 @@ function copyTextToClipboard(text) {
     navigator.clipboard.writeText(text).then(function () {
     }, function (err) {
     });
+}
+
+function resizeNetwork() {
+    let iframeheight = window.innerHeight
+    let titleheight = document.getElementById("Title").clientHeight
+    let controlsheight = document.getElementById("Controls").clientHeight
+    let networkheight = iframeheight - titleheight - controlsheight - 45
+    console.log("resize to "+networkheight)
+    document.getElementById("network").style.height = networkheight+"px"
 }
