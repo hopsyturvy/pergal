@@ -37,6 +37,9 @@ $(document).ready(function () {
     $('#Example').click(function () {
         GetFile()
     })
+    $('#Zoom1').click(function () {
+        recentre()
+    });
     //Load the default choice in the Combo box
     GetFile();
     resizeNetwork();
@@ -214,17 +217,19 @@ for (var i = 0; i < theNodes.data.length; i++) {
         }
     });
     //On.stabilized is when things have sorted themselves out
-    network.on("stabilized", function (params) {
-        var moptions = { animation: { duration: 1500 }, scale: 1 }
-        if ($('#Zoom1').is(':checked')) {
-            network.fit(moptions)
-            network.redraw() //Can hang if we don't have this
-        }
-    })
+    
     CalcIt()
 
 
 }
+
+function recentre() {
+    var moptions = { animation: { duration: 1500 }, scale: 1 }
+        network.fit(moptions)
+        network.redraw() //Can hang if we don't have this
+    
+}
+
 function clearSlider() {//Get rid of info on the input slider
     $("#ILabel").text("No Input Selected")
     theVal = 50
