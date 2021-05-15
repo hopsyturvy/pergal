@@ -37,8 +37,6 @@ $(document).ready(function () {
     $('#Example').click(function () {
         GetFile()
     })
-    document.getElementById('Load').addEventListener('click', clearOldName, false);
-    document.getElementById('Load').addEventListener('change', handleFileSelect, false);
     //Load the default choice in the Combo box
     GetFile();
     resizeNetwork();
